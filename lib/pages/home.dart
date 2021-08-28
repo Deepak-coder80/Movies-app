@@ -33,9 +33,18 @@ class MovieListView extends StatelessWidget {
       backgroundColor: Colors.blueGrey.shade400,
       body: ListView.builder(itemCount:movies.length,itemBuilder: (BuildContext context,int index){
         return Card(
-         
+          elevation: 4.5,
           color: Colors.white,
           child: ListTile(
+            leading: CircleAvatar(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(14),
+
+                ),
+              ),
+            ),
             title: Text(movies[index]),
             subtitle: Text("Movie short description"),
           ),
