@@ -180,6 +180,7 @@ class MovieListViewDetails extends StatelessWidget {
           HorizontalLine(),
           MovieDetailsCast(movie: movie),
           HorizontalLine(),
+          MovieExtraPosters(posters: movie.Images),
 
         ],
       ),

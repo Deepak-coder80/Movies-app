@@ -17,7 +17,7 @@ class MovieDetailsThumbnail extends StatelessWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 190,
+              height: 170,
               decoration: BoxDecoration(
                   image: DecorationImage(
                     image: NetworkImage(thumbnail),
@@ -248,7 +248,38 @@ class MovieExtraPosters extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0),
+            child: Text("More Movies Posters".toUpperCase(),
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.black26,
+            ),
+            ),
+          ),
+        Container(
+          height: 175,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: ListView.separated(
+              scrollDirection:Axis.horizontal,
+                 separatorBuilder: (context,index)=>SizedBox(width: 8,),
+                  itemCount: posters.length,
+                  itemBuilder: (context,index)=>ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width/4,
+                      height: 160,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(posters[index]),
+                          fit: BoxFit.cover,
+                        )
+                      ),
+                    ),
+                  ),
 
+              ),
+        )
       ],
     );
   }
