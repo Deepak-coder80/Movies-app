@@ -163,23 +163,23 @@ class MovieDetailsCast extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           MovieField(field:"Cast",value: movie.Actors),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           MovieField(field:"Director",value:movie.Director),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           MovieField(field:"Awards",value:movie.Awards),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           MovieField(field: "IMDB rating", value: movie.imdbRating),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           MovieField(field: "Language", value: movie.Language),
           SizedBox(
@@ -222,3 +222,35 @@ class MovieField extends StatelessWidget {
     );
   }
 }
+
+class HorizontalLine extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 12),
+      child: Container(
+        height: 0.5,
+        color: Colors.grey,
+      ),
+    );
+  }
+}
+
+class MovieExtraPosters extends StatelessWidget {
+  final List<String> posters;
+
+  const MovieExtraPosters({Key? key, required this.posters}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+      ],
+    );
+  }
+}
+
