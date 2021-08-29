@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/model/movie.dart';
+import 'package:movie_app/pages/movie_ui.dart';
 
 class MovieListView extends StatelessWidget {
   final List<Movie>  movieList = Movie.getMovie();
@@ -172,17 +173,19 @@ class MovieListViewDetails extends StatelessWidget {
         title: Text("Details of ${this.movie.title}"),
         backgroundColor: Colors.blueGrey.shade900,
       ),
-      body: Center(
-        child: Container(
-          child: RaisedButton(
-            onPressed: () { 
-              Navigator.pop(context);
-            },
-            child: Text("Go Back ${this.movie.Director}"),
-          ),
-        ),
+      body: ListView(
+        children: [
+          MovieDetailsThumbnail(thumbnail: movie.Images[0]),
+          MovieDetailsHeaderWithPoster(movie: movie),
+          MovieDetailsCast(movie: movie),
+
+        ],
       ),
     );
   }
 }
+
+
+
+
 
